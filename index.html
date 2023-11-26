@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+<body>
+    <section class="form my-4 mx-5">
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="center-content col-lg-5">
+                    <img src="gambar/3d-plastilina-yellow-party-popper.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-7 px-5 pt-5">
+                    <h1>Selamat Datang</h1>
+                    <h4>Login ke akun mu</h4>
+                    <form onsubmit="return validateForm()">
+                        <div class="form-row">
+                            <div class="col-lg-10">
+                                <input type="email" placeholder="example@gmail.com" class="form-control my-3" id="exampleInputEmail1">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-10">
+                                <input type="password" placeholder="Password" class="form-control my-3" id="exampleInputPassword1">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-9">
+                                <button type="submit" class="btn1 mt-3 mb-4">Login</button>
+                            </div>
+                        </div>
+                        <p>Tidak Punya Akun ? <a  class="span1" href="register.html">Register disini</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <script>
+        function validateForm() {
+            var email = document.getElementById('exampleInputEmail1').value;
+            var password = document.getElementById('exampleInputPassword1').value;
+
+            if (email === '' || password === '') {
+                alert('Email dan Password Tidak Boleh Kosong');
+                return false;
+            } 
+
+            if (!isValidEmail(email)) {
+                alert('Email Tidak Sesuai');
+                return false;
+            }
+
+            window.location.href = 'homepage.html';
+            return false;
+        }
+
+        function isValidEmail(email) {
+            var emailPattern = /\S+@\S+\.\S+/;
+            return emailPattern.test(email);
+        }
+    </script>
+    <script src="/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style2.css">
+    <title>Register</title>
+</head>
+<body>
+    <section class="form my-4 mx-5">
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="center-content col-lg-5">
+                    <img src="gambar/3d-plastilina-pink-dribbble-logo.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-7 px-5 pt-5">
+                    <h1>Selamat Datang</h1>
+                    <h4>Daftar Akun mu Disini</h4>
+                    <form onsubmit="return validateForm()">
+                        <div class="form-row">
+                            <div class="col-lg-10">
+                                <input type="text" placeholder="Nama" class="form-control my-3" id="exampleInputName1">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-10">
+                                <input type="number" placeholder="08XXXXXX" class="form-control my-3" id="exampleInputNumber1">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-10">
+                                <input type="email" placeholder="example@gmail.com" class="form-control my-3" id="exampleInputEmail1">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-10">
+                                <input type="password" placeholder="Password" class="form-control my-3" id="exampleInputPassword1">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-9">
+                                <button type="submit" class="btn1 mt-3 mb-4">Register</button>
+                            </div>
+                        </div>
+                        <p>Sudah Punya Akun ? <a class="span1" href="index.html">Login disini</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        function validateForm() {
+            var nama = document.getElementById('exampleInputName1').value;
+            var nomor = document.getElementById('exampleInputNumber1').value;
+            var email = document.getElementById('exampleInputEmail1').value;
+            var password = document.getElementById('exampleInputPassword1').value;
+
+            if (nama === '' || nomor === '' || email === '' || password === '') {
+                alert('Pastikan Semua Sudah Terisi');
+                return false;
+            } 
+
+            if (!isValidEmail(email)) {
+                alert('Email Tidak Sesuai');
+                return false;
+            }
+
+            alert('Akun Berhasil Dibuat')
+            window.location.href = 'index.html';
+            return false;
+        }
+
+        function isValidEmail(email) {
+            var emailPattern = /\S+@\S+\.\S+/;
+            return emailPattern.test(email);
+        }
+    </script>
+    <script src="/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+</body>
+</html>
